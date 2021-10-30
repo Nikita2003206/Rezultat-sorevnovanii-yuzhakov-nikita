@@ -47,36 +47,63 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
 
         private void buttonOtchet_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            textBoxTxt.Text = "";
+            string Filway = @"C:\Users\211924\Desktop\Text.txt";
+            using (StreamReader reader = new StreamReader(Filway))
             {
-                string Filway = openFileDialog1.FileName;
-                using (StreamReader reader = new StreamReader(Filway))
+                using (StreamWriter sw = new StreamWriter(@"C:\Users\211924\Desktop\otchet.txt"))
                 {
-                    using (StreamWriter sw = new StreamWriter(@"C:\Users\211924\Desktop\otchet.txt"))
+                    while (reader.EndOfStream == false)
                     {
-                        while (reader.EndOfStream == false)
+                        Filetxt = reader.ReadLine();
+                        if (name == GetName(Filetxt) && GetSeconds(Filetxt) <= maxRez)
                         {
-                            Filetxt = reader.ReadLine();
-                            if (name == GetName(Filetxt) && GetCount(Filetxt) <= maxRez)
-                            {
-                                lst.Add(Filetxt);
-                                textBoxTxt.Text += Filetxt + "" + "\r" + "\n";
-                                sw.WriteLine(Filetxt);
-                            }
+                            lst.Add(Filetxt);
+                            textBoxTxt.Text += Filetxt + "" + "\r" + "\n";
+                            sw.WriteLine(Filetxt);
                         }
                     }
                 }
             }
+
         }
+
+
         private string GetName(string str)
         {
             string[] a = str.Split(',');//разделение по запятой
             return a[0];//возвращает имя и фамилию
         }
-        private int GetCount(string str)
+        private int GetSeconds(string str)
         {
             string[] a = str.Split(',');//разделение по запятой
             return Convert.ToInt32(a[2]);//возвращает результат забега
+        }
+
+
+        private void buttonFileText_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string Filway = openFileDialog1.FileName;
+                using (StreamReader reader = new StreamReader(Filway))
+                {                    
+                        while (reader.EndOfStream == false)
+                        {
+                            Filetxt = reader.ReadLine();
+                            
+                                lst.Add(Filetxt);
+                                textBoxTxt.Text += Filetxt + "" + "\r" + "\n";
+                            
+                        }
+                    
+                }
+            }
+        }
+
+        private void textBoxTxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
