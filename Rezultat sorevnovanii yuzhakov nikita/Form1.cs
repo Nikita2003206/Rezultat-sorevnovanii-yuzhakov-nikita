@@ -54,7 +54,16 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
                 {
                     using (StreamWriter sw = new StreamWriter(@"C:\Users\211924\Desktop\otchet.txt"))
                     {
-                        
+                        while (reader.EndOfStream == false)
+                        {
+                            Filetxt = reader.ReadLine();
+                            if (name == GetName(Filetxt) && GetCount(Filetxt) <= maxRez)
+                            {
+                                lst.Add(Filetxt);
+                                textBoxTxt.Text += Filetxt + "" + "\r" + "\n";
+                                sw.WriteLine(Filetxt);
+                            }
+                        }
                     }
                 }
             }
