@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonOtchet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxFio = new System.Windows.Forms.TextBox();
+            this.textBoxMaxRez = new System.Windows.Forms.TextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.textBoxTxt = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonOtchet
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(16, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Отчет";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonOtchet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOtchet.Location = new System.Drawing.Point(16, 92);
+            this.buttonOtchet.Name = "buttonOtchet";
+            this.buttonOtchet.Size = new System.Drawing.Size(132, 63);
+            this.buttonOtchet.TabIndex = 0;
+            this.buttonOtchet.Text = "Отчет";
+            this.buttonOtchet.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -67,53 +67,54 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Макс. доп. результат";
             // 
-            // textBox1
+            // textBoxFio
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(154, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 26);
-            this.textBox1.TabIndex = 3;
+            this.textBoxFio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxFio.Location = new System.Drawing.Point(154, 6);
+            this.textBoxFio.Name = "textBoxFio";
+            this.textBoxFio.Size = new System.Drawing.Size(168, 26);
+            this.textBoxFio.TabIndex = 3;
             // 
-            // textBox2
+            // textBoxMaxRez
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(189, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(133, 26);
-            this.textBox2.TabIndex = 4;
+            this.textBoxMaxRez.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxMaxRez.Location = new System.Drawing.Point(189, 54);
+            this.textBoxMaxRez.Name = "textBoxMaxRez";
+            this.textBoxMaxRez.Size = new System.Drawing.Size(133, 26);
+            this.textBoxMaxRez.TabIndex = 4;
             // 
-            // button2
+            // buttonClear
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(190, 92);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 63);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Очистить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Location = new System.Drawing.Point(190, 92);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(132, 63);
+            this.buttonClear.TabIndex = 5;
+            this.buttonClear.Text = "Очистить";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // textBox3
+            // textBoxTxt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(16, 174);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(306, 187);
-            this.textBox3.TabIndex = 6;
+            this.textBoxTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxTxt.Location = new System.Drawing.Point(16, 174);
+            this.textBoxTxt.Multiline = true;
+            this.textBoxTxt.Name = "textBoxTxt";
+            this.textBoxTxt.Size = new System.Drawing.Size(306, 187);
+            this.textBoxTxt.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 380);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxTxt);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.textBoxMaxRez);
+            this.Controls.Add(this.textBoxFio);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonOtchet);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -123,13 +124,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonOtchet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxFio;
+        private System.Windows.Forms.TextBox textBoxMaxRez;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.TextBox textBoxTxt;
     }
 }
 

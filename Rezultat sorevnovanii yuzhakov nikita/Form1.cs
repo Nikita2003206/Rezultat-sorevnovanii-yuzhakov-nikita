@@ -16,5 +16,10 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
         {
             InitializeComponent();
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
