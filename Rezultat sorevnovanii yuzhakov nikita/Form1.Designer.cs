@@ -35,6 +35,7 @@
             this.textBoxMaxRez = new System.Windows.Forms.TextBox();
             this.buttonClear = new System.Windows.Forms.Button();
             this.textBoxTxt = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // buttonOtchet
@@ -46,6 +47,7 @@
             this.buttonOtchet.TabIndex = 0;
             this.buttonOtchet.Text = "Отчет";
             this.buttonOtchet.UseVisualStyleBackColor = true;
+            this.buttonOtchet.Click += new System.EventHandler(this.buttonOtchet_Click);
             // 
             // label1
             // 
@@ -74,6 +76,7 @@
             this.textBoxFio.Name = "textBoxFio";
             this.textBoxFio.Size = new System.Drawing.Size(168, 26);
             this.textBoxFio.TabIndex = 3;
+            this.textBoxFio.TextChanged += new System.EventHandler(this.textBoxFio_TextChanged);
             // 
             // textBoxMaxRez
             // 
@@ -82,6 +85,7 @@
             this.textBoxMaxRez.Name = "textBoxMaxRez";
             this.textBoxMaxRez.Size = new System.Drawing.Size(133, 26);
             this.textBoxMaxRez.TabIndex = 4;
+            this.textBoxMaxRez.TextChanged += new System.EventHandler(this.textBoxMaxRez_TextChanged);
             // 
             // buttonClear
             // 
@@ -102,6 +106,10 @@
             this.textBoxTxt.Name = "textBoxTxt";
             this.textBoxTxt.Size = new System.Drawing.Size(306, 187);
             this.textBoxTxt.TabIndex = 6;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -131,6 +139,7 @@
         private System.Windows.Forms.TextBox textBoxMaxRez;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.TextBox textBoxTxt;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
