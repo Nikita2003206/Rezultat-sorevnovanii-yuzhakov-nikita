@@ -13,10 +13,10 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
 {
     public partial class Form1 : Form
     {
-        int maxRez;
-        string name;
-        string Filetxt;
-        private List<string> lst = new List<string>();
+        int maxRez;//макс доп результат
+        string name;//Фио
+        string Filetxt;//переменная для текста из файла
+        private List<string> lst = new List<string>(); //лист 
 
         public Form1()
         {
@@ -25,7 +25,7 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBoxTxt.Text = "";
+            textBoxTxt.Text = "";//Очистка результата
         }
 
         private void textBoxFio_TextChanged(object sender, EventArgs e)
@@ -35,29 +35,39 @@ namespace Rezultat_sorevnovanii_yuzhakov_nikita
 
         private void textBoxMaxRez_TextChanged(object sender, EventArgs e)
         {
-            try
+            try  //проверка,что введено число 
             {
                 maxRez = Convert.ToInt32(textBoxMaxRez.Text);
             }
             catch
             {
-                MessageBox.Show("Введите число");
+                MessageBox.Show("Введите число");//выводит сообщение
             }
         }
 
         private void buttonOtchet_Click(object sender, EventArgs e)
         {
-       
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string Filway = openFileDialog1.FileName;
+                using (StreamReader reader = new StreamReader(Filway))
+                {
+                    using (StreamWriter sw = new StreamWriter(@"C:\Users\211924\Desktop\otchet.txt"))
+                    {
+                        
+                    }
+                }
+            }
         }
         private string GetName(string str)
         {
-            string[] a = str.Split(',');
-            return a[0];
+            string[] a = str.Split(',');//разделение по запятой
+            return a[0];//возвращает имя и фамилию
         }
         private int GetCount(string str)
         {
-            string[] a = str.Split(',');
-            return Convert.ToInt32(a[2]);
+            string[] a = str.Split(',');//разделение по запятой
+            return Convert.ToInt32(a[2]);//возвращает результат забега
         }
     }
 }
